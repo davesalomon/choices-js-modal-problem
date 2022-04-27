@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./venobox.css" />
+        <script src="./venobox.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+        <script src="./choices.js"></script>
+    </head>
+    <body>
+        <a class="venobox" data-vbtype="inline" data-maxwidth="400px" href="#inline-content">Inline</a>
+
+        <div id="inline-content" style="display:none;">
+            <form>
+                <select id="js-choice-1">
+                    <option>Foo</option>
+                    <option>Bar</option>
+                    <option>Baz</option>
+                    <option>Quxx</option>
+                </select>
+            </form>
+        </div>
+
+        <script type="text/javascript">
+            new VenoBox();
+
+            setTimeout(() => {
+                var els = document.querySelectorAll('#js-choice-1');
+                els.forEach((element) => {
+                    new Choices(element);
+                })
+            }, 5000);
+        </script>
+    </body>
+</html>
+
